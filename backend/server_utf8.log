@@ -1,0 +1,110 @@
+﻿Γ£à Database connected successfully
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ   Hospital Management System API          Γòæ
+Γòæ   Server running on port 5005            Γòæ
+Γòæ   Environment: development              Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+      
+2026-02-17T20:22:53.713Z - POST /api/auth/login
+Login attempt for: john.doe@email.com
+User found: john.doe@email.com | Role: Patient
+Password verified successfully
+JWT token generated successfully
+Login successful for: john.doe@email.com
+2026-02-17T20:22:53.975Z - POST /api/auth/login
+Login attempt for: dr.smith@hospital.com
+User found: dr.smith@hospital.com | Role: Doctor
+Password verified successfully
+JWT token generated successfully
+Login successful for: dr.smith@hospital.com
+2026-02-17T20:22:54.132Z - POST /api/auth/login
+Login attempt for: reception1@hospital.com
+User found: reception1@hospital.com | Role: Receptionist
+Password verified successfully
+JWT token generated successfully
+Login successful for: reception1@hospital.com
+2026-02-17T20:22:54.312Z - POST /api/auth/login
+Login attempt for: pharmacist@hospital.com
+User found: pharmacist@hospital.com | Role: Pharmacist
+Password verified successfully
+JWT token generated successfully
+Login successful for: pharmacist@hospital.com
+2026-02-17T20:22:54.487Z - POST /api/auth/login
+Login attempt for: admin@hospital.com
+User found: admin@hospital.com | Role: Admin
+Password verified successfully
+JWT token generated successfully
+Login successful for: admin@hospital.com
+2026-02-17T20:22:54.643Z - GET /api/doctors
+2026-02-17T20:22:54.654Z - GET /api/appointments/available-slots
+2026-02-17T20:22:54.666Z - POST /api/appointments
+node : Create 
+appointment error 
+DETAILS: 
+ReferenceError: 
+selectedDate is not 
+defined
+At line:1 char:17
++ $env:PORT=5005; 
+node server.js > 
+server.log 2>&1
++                 ~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Create    
+ appointm... is n    
+ot defined:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+    at exports.create
+Appointment (C:\Users
+\Administrator\Downlo
+ads\hospital-manageme
+nt-system\final_produ
+ction_code\backend\co
+ntrollers\appointment
+Controller.js:178:73)
+    at process.proces
+sTicksAndRejections (
+node:internal/process
+/task_queues:103:5)
+C:\Users\Administrato
+r\Downloads\hospital-
+management-system\fin
+al_production_code\ba
+ckend\controllers\app
+ointmentController.js
+:269
+      message: 
+`Failed to create 
+appointment (Date: 
+${appointmentDate}): 
+${error.message}`,
+                     
+                     
+            ^
+
+ReferenceError: 
+appointmentDate is 
+not defined
+    at exports.create
+Appointment (C:\Users
+\Administrator\Downlo
+ads\hospital-manageme
+nt-system\final_produ
+ction_code\backend\co
+ntrollers\appointment
+Controller.js:269:55)
+    at process.proces
+sTicksAndRejections (
+node:internal/process
+/task_queues:103:5)
+
+Node.js v24.13.1
