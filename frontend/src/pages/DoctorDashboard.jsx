@@ -17,6 +17,8 @@ import { appointmentsAPI, billingAPI } from '../services/api';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 const DoctorDashboard = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -165,7 +167,7 @@ const DoctorDashboard = () => {
       };
 
       const medicalRecordResponse = await axios.post(
-        'http://localhost:5000/api/medical-records',
+        `${API_BASE_URL}/medical-records`,
         medicalRecordPayload,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -189,7 +191,7 @@ const DoctorDashboard = () => {
         };
 
         await axios.post(
-          `http://localhost:5000/api/medical-records/${recordId}/prescriptions`,
+          `${API_BASE_URL}/medical-records/${recordId}/prescriptions`,
           prescriptionPayload,
           { headers: { Authorization: `Bearer ${token}` } }
         );

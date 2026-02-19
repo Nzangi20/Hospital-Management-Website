@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 const DoctorsPage = () => {
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +16,7 @@ const DoctorsPage = () => {
 
   const fetchDoctors = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/doctors');
+      const response = await axios.get(`${API_BASE_URL}/doctors`);
       console.log('Doctors fetched:', response.data);
       setDoctors(response.data.data || []);
     } catch (error) {
