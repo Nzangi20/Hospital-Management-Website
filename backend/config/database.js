@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise');
 require('dotenv').config();
 
 // Database connection pool
-const pool = mysql.createPool({
+const poolConfig = {
   host: process.env.DB_HOST || 'localhost',
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD,
@@ -14,7 +14,15 @@ const pool = mysql.createPool({
   queueLimit: 0,
   enableKeepAlive: true,
   keepAliveInitialDelay: 0
-});
+};
+
+// Enable SSL for remote databases (required by TiDB Cloud)
+const dbHost = process.env.DB_HOST || 'localhost';
+if (dbHost !== 'localhost' && dbHost !== '127.0.0.1') {
+  poolConfig.ssl = { rejectUnauthorized: true };
+}
+
+const pool = mysql.createPool(poolConfig);
 
 // Test database connection
 const testConnection = async () => {
