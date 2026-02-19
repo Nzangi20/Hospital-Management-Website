@@ -3,6 +3,10 @@
         {
             "source": "/api/:path*",
             "destination": "https://hospital-management-website-yilj.onrender.com/api/:path*"
+        },
+        {
+            "source": "/((?!assets/).*)",
+            "destination": "/index.html"
         }
     ]
 }
